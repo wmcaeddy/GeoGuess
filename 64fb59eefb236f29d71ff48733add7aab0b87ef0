@@ -1,0 +1,4 @@
+Task: Harden Entrypoint Script
+Summary: Added 'set -e' to 'entrypoint.sh' for fail-fast behavior, improved 'sed' quoting for robust port replacement, and added logging to debug startup configuration.
+Files: entrypoint.sh, tests/unit/infra.spec.js
+Why: To ensure the application starts correctly in the Railway environment and provides useful logs in case of failure.
