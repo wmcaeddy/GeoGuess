@@ -22,6 +22,7 @@ describe('MapillaryView.vue', () => {
     };
 
     beforeEach(() => {
+        jest.clearAllMocks();
         wrapper = shallowMount(MapillaryView, {
             propsData,
         });
@@ -40,5 +41,23 @@ describe('MapillaryView.vue', () => {
     it('accepts lat and lng props', () => {
         expect(wrapper.props().lat).toBe(51.505);
         expect(wrapper.props().lng).toBe(-0.09);
+    });
+
+    it('emits moved event when Mapillary viewer moves', async () => {
+        const { Viewer } = require('mapillary-js');
+        // The component might have been re-rendered or multiple instances created
+        // Let's get the latest viewer instance
+        const viewerInstance = Viewer.mock.results[Viewer.mock.results.length - 1].value;
+        const onImageCallback = viewerInstance.on.mock.calls.find(call => call[0] === 'image')[1];
+
+        // Trigger the callback with a mock image object
+        onImageCallback({
+            image: {
+                lngLat: { lat: 51.5, lng: -0.1 }
+            }
+        });
+
+        expect(wrapper.emitted().moved).toBeTruthy();
+        expect(wrapper.emitted().moved[0]).toEqual([{ lat: 51.5, lng: -0.1 }]);
     });
 });

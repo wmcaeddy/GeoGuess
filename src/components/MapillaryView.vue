@@ -35,6 +35,13 @@ export default {
         component: { cover: false },
       });
 
+      this.mly.on('image', (event) => {
+        this.$emit('moved', {
+          lat: event.image.lngLat.lat,
+          lng: event.image.lngLat.lng,
+        });
+      });
+
       // Initial move (this would need a real image key in a real scenario,
       // but for now we just verify initialization)
       // In a real implementation we might need to search for an image close to lat/lng first
