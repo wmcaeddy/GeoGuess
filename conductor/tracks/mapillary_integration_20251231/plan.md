@@ -13,7 +13,7 @@
 - [x] Task: Install Mapillary JS c8ebe9d
     - [ ] Subtask: Run `npm install mapillary-js`.
     - [ ] Subtask: Add the Mapillary CSS to the project (e.g., in `main.js` or `App.vue`).
-- [ ] Task: Create Mapillary Wrapper Component
+- [x] Task: Create Mapillary Wrapper Component c081d5a
     - [ ] Subtask: Create `src/components/MapillaryView.vue`.
     - [ ] Subtask: Implement the `mounted` hook to initialize `Mapillary.Viewer`.
     - [ ] Subtask: Add props for `lat` and `lng`.
