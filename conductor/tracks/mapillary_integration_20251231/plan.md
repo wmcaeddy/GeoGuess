@@ -27,7 +27,7 @@
 - [x] Task: Handle Navigation Events a97e5fd
     - [ ] Subtask: Listen for the `image` event (or equivalent movement event) from Mapillary.
     - [ ] Subtask: Emit an event to the parent component with the new coordinates when the user moves.
-- [ ] Task: Verify Game Flow
+- [x] Task: Verify Game Flow c92baa9
     - [ ] Subtask: Ensure the "Guess" functionality works with the current Mapillary location.
     - [ ] Subtask: Run E2E tests (Cypress) to check the basic game loop (load, move, guess).
 - [ ] Task: Conductor - User Manual Verification 'Game Logic Adaptation' (Protocol in workflow.md)
