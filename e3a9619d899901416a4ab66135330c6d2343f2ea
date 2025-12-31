@@ -1,0 +1,9 @@
+Phase: Railway Configuration
+Verification Report:
+- Automated Tests: Passed (npm run test:unit -- tests/unit/infra.spec.js)
+- Manual Verification: Confirmed by user.
+  1. Dockerfile contains VUE_APP_MAPILLARY_CLIENT_ID.
+  2. entrypoint.sh contains sed replacement logic.
+  3. railway.toml exists with correct config.
+  4. .env.dist includes VUE_APP_MAPILLARY_CLIENT_ID.
+User Confirmation: Yes
