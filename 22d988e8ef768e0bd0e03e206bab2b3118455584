@@ -1,0 +1,4 @@
+Task: Create Dockerfile for Production
+Summary: Updated the existing multi-stage Dockerfile and entrypoint.sh to support the VUE_APP_MAPILLARY_CLIENT_ID environment variable, ensuring it can be injected at runtime in the Railway environment. Added unit tests to verify these changes.
+Files: Dockerfile, entrypoint.sh, tests/unit/infra.spec.js
+Why: To allow the application to securely use the Mapillary API in a containerized production environment.
