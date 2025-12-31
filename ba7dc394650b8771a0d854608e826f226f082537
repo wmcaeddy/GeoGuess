@@ -1,0 +1,4 @@
+Task: Update Public Path Logic
+Summary: Updated 'entrypoint.sh' to use an empty string as the default value for 'VUE_APP_PUBLIC_PATH'. This prevents double slashes in asset paths (e.g., '//js/app.js') when the application is hosted at the root, which was likely causing the blank page issue on Railway.
+Files: entrypoint.sh, tests/unit/infra.spec.js
+Why: To ensure that asset URLs are generated correctly as absolute paths starting with a single slash.
