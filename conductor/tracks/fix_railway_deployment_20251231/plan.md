@@ -8,7 +8,7 @@
     - [ ] Subtask: Add `set -e` to fail on errors.
     - [ ] Subtask: Improve `sed` command for port replacement (use double quotes).
     - [ ] Subtask: Add debug logging (e.g., `echo "Listening on port ${PORT:-80}"`).
-- [ ] Task: Update Unit Tests
+- [x] Task: Update Unit Tests 64fb59e
     - [ ] Subtask: Update `tests/unit/infra.spec.js` to match new config.
     - [ ] Subtask: Verify port replacement logic with tests.
 - [ ] Task: Conductor - User Manual Verification 'Configuration & Entrypoint Fixes' (Protocol in workflow.md)
