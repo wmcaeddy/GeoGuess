@@ -1,7 +1,7 @@
 # Plan: Mapillary Integration & Railway Deployment
 
 ## Phase 1: Railway Configuration
-- [ ] Task: Create Dockerfile for Production
+- [x] Task: Create Dockerfile for Production 22d988e
     - [ ] Subtask: Write a multi-stage `Dockerfile` (build stage with Node, production stage with Nginx or lightweight Node server).
     - [ ] Subtask: Test the Docker build locally to ensure it runs.
 - [ ] Task: Create Railway Configuration
