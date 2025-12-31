@@ -1,0 +1,4 @@
+Task: Create Mapillary Wrapper Component
+Summary: Created a new Vue component 'MapillaryView.vue' that wraps the Mapillary Viewer. Implemented prop validation for 'lat' and 'lng' and initialized the viewer in the 'mounted' hook. Verified functionality with a new unit test suite.
+Files: src/components/MapillaryView.vue, tests/unit/components/MapillaryView.spec.js
+Why: To provide a reusable component for displaying Mapillary street-level imagery in the game.
