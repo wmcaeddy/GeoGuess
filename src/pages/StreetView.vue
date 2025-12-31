@@ -21,7 +21,13 @@
                         size="64"
                     ></v-progress-circular>
                 </v-overlay>
-                <div id="street-view" ref="streetView" />
+                <div id="street-view" ref="streetView">
+                    <MapillaryView 
+                        v-if="randomLatLng" 
+                        :lat="randomLatLng.lat()" 
+                        :lng="randomLatLng.lng()" 
+                    />
+                </div>
 
 
                 <div id="game-interface__overlay">
@@ -131,9 +137,9 @@ import 'firebase/database';
 import HeaderGame from '@/components/HeaderGame';
 import Maps from '@/components/Maps';
 import DialogMessage from '@/components/DialogMessage';
+import MapillaryView from '@/components/MapillaryView';
 
-
-import StreetViewService from '@/plugins/StreetViewService';
+// import StreetViewService from '@/plugins/StreetViewService';
 
 import {
     getRandomArea,
@@ -153,7 +159,8 @@ export default {
         HeaderGame,
         Maps,
         DialogMessage,
-        LeaderboardContent
+        LeaderboardContent,
+        MapillaryView
     },
     mixins: [ConfirmExitMixin],
     props: {
@@ -309,22 +316,22 @@ export default {
             );
         }
         await this.$gmapApiPromiseLazy();
-        this.panorama = new google.maps.StreetViewPanorama(
-            this.$refs.streetView
-        );
+        // this.panorama = new google.maps.StreetViewPanorama(
+        //     this.$refs.streetView
+        // );
 
-        if (!this.streetViewService) {
-            this.streetViewService = new StreetViewService(
-                { allPanorama: this.allPanorama, optimiseStreetView: this.optimiseStreetView },
-                { mode: this.mode, areaParams: this.areaParams, areasJson: this.areasJson },
-                this.placeGeoJson,
-                this.roundsPredefined
-            );
-        }
+        // if (!this.streetViewService) {
+        //     this.streetViewService = new StreetViewService(
+        //         { allPanorama: this.allPanorama, optimiseStreetView: this.optimiseStreetView },
+        //         { mode: this.mode, areaParams: this.areaParams, areasJson: this.areasJson },
+        //         this.placeGeoJson,
+        //         this.roundsPredefined
+        //     );
+        // }
 
         if (!this.multiplayer) {
-            await this.loadStreetView();
-            this.$refs.mapContainer.startNextRound();
+            // await this.loadStreetView();
+            // this.$refs.mapContainer.startNextRound();
             
             if (this.timeLimitation != 0) {
                 if (!this.hasTimerStarted) {
