@@ -1,0 +1,4 @@
+Task: Create Railway Configuration
+Summary: Created railway.toml to configure the application for deployment on Railway.com, specifying the Dockerfile builder and health check parameters. Updated .env.dist to include the VUE_APP_MAPILLARY_CLIENT_ID placeholder.
+Files: railway.toml, .env.dist, tests/unit/infra.spec.js
+Why: To enable seamless deployment and environment configuration on the Railway platform.
