@@ -1,0 +1,33 @@
+# Plan: Mapillary Integration & Railway Deployment
+
+## Phase 1: Railway Configuration
+- [ ] Task: Create Dockerfile for Production
+    - [ ] Subtask: Write a multi-stage `Dockerfile` (build stage with Node, production stage with Nginx or lightweight Node server).
+    - [ ] Subtask: Test the Docker build locally to ensure it runs.
+- [ ] Task: Create Railway Configuration
+    - [ ] Subtask: Create `railway.toml` (optional, but good for specifying build commands).
+    - [ ] Subtask: Document required environment variables (e.g., `VUE_APP_MAPILLARY_CLIENT_ID`) in a `.env.example`.
+- [ ] Task: Conductor - User Manual Verification 'Railway Configuration' (Protocol in workflow.md)
+
+## Phase 2: Mapillary Component Implementation
+- [ ] Task: Install Mapillary JS
+    - [ ] Subtask: Run `npm install mapillary-js`.
+    - [ ] Subtask: Add the Mapillary CSS to the project (e.g., in `main.js` or `App.vue`).
+- [ ] Task: Create Mapillary Wrapper Component
+    - [ ] Subtask: Create `src/components/MapillaryView.vue`.
+    - [ ] Subtask: Implement the `mounted` hook to initialize `Mapillary.Viewer`.
+    - [ ] Subtask: Add props for `lat` and `lng`.
+    - [ ] Subtask: Write a basic unit test to verify the component mounts.
+- [ ] Task: Integrate Component into Game Page
+    - [ ] Subtask: Replace `StreetView` component usage in `src/pages/StreetView.vue` (or equivalent) with `MapillaryView`.
+    - [ ] Subtask: Pass test coordinates to verify the viewer loads an image.
+- [ ] Task: Conductor - User Manual Verification 'Mapillary Component Implementation' (Protocol in workflow.md)
+
+## Phase 3: Game Logic Adaptation
+- [ ] Task: Handle Navigation Events
+    - [ ] Subtask: Listen for the `image` event (or equivalent movement event) from Mapillary.
+    - [ ] Subtask: Emit an event to the parent component with the new coordinates when the user moves.
+- [ ] Task: Verify Game Flow
+    - [ ] Subtask: Ensure the "Guess" functionality works with the current Mapillary location.
+    - [ ] Subtask: Run E2E tests (Cypress) to check the basic game loop (load, move, guess).
+- [ ] Task: Conductor - User Manual Verification 'Game Logic Adaptation' (Protocol in workflow.md)
