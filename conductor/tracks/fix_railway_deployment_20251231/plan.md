@@ -4,7 +4,7 @@
 - [x] Task: Update Nginx Config 4ff2d9c
     - [ ] Subtask: Add `listen [::]:PORT_HOLDER;` for IPv6 support.
     - [ ] Subtask: Ensure `PORT_HOLDER` is used correctly.
-- [ ] Task: Harden Entrypoint Script
+- [x] Task: Harden Entrypoint Script 64fb59e
     - [ ] Subtask: Add `set -e` to fail on errors.
     - [ ] Subtask: Improve `sed` command for port replacement (use double quotes).
     - [ ] Subtask: Add debug logging (e.g., `echo "Listening on port ${PORT:-80}"`).
