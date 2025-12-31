@@ -9,7 +9,7 @@
     - [ ] Subtask: Document required environment variables (e.g., `VUE_APP_MAPILLARY_CLIENT_ID`) in a `.env.example`.
 - [ ] Task: Conductor - User Manual Verification 'Railway Configuration' (Protocol in workflow.md)
 
-## Phase 2: Mapillary Component Implementation
+## Phase 2: Mapillary Component Implementation [checkpoint: 633fc54]
 - [x] Task: Install Mapillary JS c8ebe9d
     - [ ] Subtask: Run `npm install mapillary-js`.
     - [ ] Subtask: Add the Mapillary CSS to the project (e.g., in `main.js` or `App.vue`).
