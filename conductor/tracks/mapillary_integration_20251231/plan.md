@@ -23,7 +23,7 @@
     - [ ] Subtask: Pass test coordinates to verify the viewer loads an image.
 - [x] Task: Conductor - User Manual Verification 'Mapillary Component Implementation' (Protocol in workflow.md)
 
-## Phase 3: Game Logic Adaptation
+## Phase 3: Game Logic Adaptation [checkpoint: aa6b3d4]
 - [x] Task: Handle Navigation Events a97e5fd
     - [ ] Subtask: Listen for the `image` event (or equivalent movement event) from Mapillary.
     - [ ] Subtask: Emit an event to the parent component with the new coordinates when the user moves.
