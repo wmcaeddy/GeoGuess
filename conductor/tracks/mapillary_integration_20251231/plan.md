@@ -24,7 +24,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Mapillary Component Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Game Logic Adaptation
-- [ ] Task: Handle Navigation Events
+- [x] Task: Handle Navigation Events a97e5fd
     - [ ] Subtask: Listen for the `image` event (or equivalent movement event) from Mapillary.
     - [ ] Subtask: Emit an event to the parent component with the new coordinates when the user moves.
 - [ ] Task: Verify Game Flow
