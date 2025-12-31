@@ -1,0 +1,4 @@
+Task: Update Nginx Config
+Summary: Updated 'nginx.conf' to include 'listen [::]:PORT_HOLDER;' to ensure IPv6 support, addressing potential connectivity issues on platforms like Railway that may use IPv6 health checks.
+Files: nginx.conf, tests/unit/nginx_config.spec.js
+Why: To ensure Nginx listens on both IPv4 and IPv6 interfaces.
