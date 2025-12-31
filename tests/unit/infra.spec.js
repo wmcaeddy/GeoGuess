@@ -20,6 +20,11 @@ describe('Infrastructure Configuration', () => {
         expect(content).toContain('echo "Listening on port ${PORT:-80}"');
     });
 
+    it('entrypoint.sh should print nginx config', () => {
+        const content = fs.readFileSync(entrypointPath, 'utf8');
+        expect(content).toContain('cat /etc/nginx/conf.d/default.conf');
+    });
+
     it('entrypoint.sh should contain VUE_APP_MAPILLARY_CLIENT_ID replacement logic', () => {
         const content = fs.readFileSync(entrypointPath, 'utf8');
         expect(content).toContain("sed -i 's|VUE_APP_MAPILLARY_CLIENT_ID_ENV|'${VUE_APP_MAPILLARY_CLIENT_ID:-none}|g' $file");

@@ -28,4 +28,7 @@ do
 
 done
 
+echo "Final nginx configuration:"
+cat /etc/nginx/conf.d/default.conf
+
 nginx -g "daemon off;"
