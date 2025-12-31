@@ -25,9 +25,14 @@ describe('Infrastructure Configuration', () => {
         expect(content).toContain('cat /etc/nginx/conf.d/default.conf');
     });
 
+    it('entrypoint.sh should log when skipping files', () => {
+        const content = fs.readFileSync(entrypointPath, 'utf8');
+        expect(content).toContain('echo "Skipping $file (not found)"');
+    });
+
     it('entrypoint.sh should contain VUE_APP_MAPILLARY_CLIENT_ID replacement logic', () => {
         const content = fs.readFileSync(entrypointPath, 'utf8');
-        expect(content).toContain("sed -i 's|VUE_APP_MAPILLARY_CLIENT_ID_ENV|'${VUE_APP_MAPILLARY_CLIENT_ID:-none}|g' $file");
+        expect(content).toContain('sed -i "s|VUE_APP_MAPILLARY_CLIENT_ID_ENV|${VUE_APP_MAPILLARY_CLIENT_ID:-none}|g" "$file"');
     });
 
     it('entrypoint.sh should contain port replacement logic for nginx config', () => {
