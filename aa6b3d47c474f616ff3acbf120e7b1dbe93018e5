@@ -1,0 +1,8 @@
+Phase: Game Logic Adaptation
+Verification Report:
+- Automated Tests: Passed (MapillaryView component events, StreetView integration events, infra tests for Railway fix)
+- Manual Verification: Confirmed by user.
+  1. Mapillary viewer navigation events capture coordinates correctly.
+  2. StreetView.vue randomLatLng updates on movement.
+  3. Railway deployment issues (port conflict) resolved.
+User Confirmation: Yes
