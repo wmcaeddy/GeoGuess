@@ -10,6 +10,16 @@ describe('Infrastructure Configuration', () => {
         expect(content).toContain('ENV VUE_APP_MAPILLARY_CLIENT_ID=VUE_APP_MAPILLARY_CLIENT_ID_ENV');
     });
 
+    it('entrypoint.sh should contain set -e', () => {
+        const content = fs.readFileSync(entrypointPath, 'utf8');
+        expect(content).toContain('set -e');
+    });
+
+    it('entrypoint.sh should log the port', () => {
+        const content = fs.readFileSync(entrypointPath, 'utf8');
+        expect(content).toContain('echo "Listening on port ${PORT:-80}"');
+    });
+
     it('entrypoint.sh should contain VUE_APP_MAPILLARY_CLIENT_ID replacement logic', () => {
         const content = fs.readFileSync(entrypointPath, 'utf8');
         expect(content).toContain("sed -i 's|VUE_APP_MAPILLARY_CLIENT_ID_ENV|'${VUE_APP_MAPILLARY_CLIENT_ID:-none}|g' $file");
@@ -17,7 +27,7 @@ describe('Infrastructure Configuration', () => {
 
     it('entrypoint.sh should contain port replacement logic for nginx config', () => {
         const content = fs.readFileSync(entrypointPath, 'utf8');
-        expect(content).toContain("sed -i 's|PORT_HOLDER|'${PORT:-80}'|g' /etc/nginx/conf.d/default.conf");
+        expect(content).toContain('sed -i "s|PORT_HOLDER|${PORT:-80}|g" /etc/nginx/conf.d/default.conf');
     });
 
     it('nginx.conf should use PORT_HOLDER placeholder', () => {

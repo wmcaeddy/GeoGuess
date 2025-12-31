@@ -1,11 +1,13 @@
 #!/bin/sh
+set -e
 
 ROOT_DIR=/usr/share/nginx/html
 
 echo "Replacing ENV variables"
+echo "Listening on port ${PORT:-80}"
 
 # Replace PORT in nginx config
-sed -i 's|PORT_HOLDER|'${PORT:-80}'|g' /etc/nginx/conf.d/default.conf
+sed -i "s|PORT_HOLDER|${PORT:-80}|g" /etc/nginx/conf.d/default.conf
 
 for file in $ROOT_DIR/js/app.*.js* $ROOT_DIR/index.html;
 do
