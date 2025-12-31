@@ -4,7 +4,7 @@
 - [x] Task: Create Dockerfile for Production 22d988e
     - [ ] Subtask: Write a multi-stage `Dockerfile` (build stage with Node, production stage with Nginx or lightweight Node server).
     - [ ] Subtask: Test the Docker build locally to ensure it runs.
-- [ ] Task: Create Railway Configuration
+- [x] Task: Create Railway Configuration 6adb937
     - [ ] Subtask: Create `railway.toml` (optional, but good for specifying build commands).
     - [ ] Subtask: Document required environment variables (e.g., `VUE_APP_MAPILLARY_CLIENT_ID`) in a `.env.example`.
 - [ ] Task: Conductor - User Manual Verification 'Railway Configuration' (Protocol in workflow.md)
