@@ -26,6 +26,7 @@
                         v-if="randomLatLng" 
                         :lat="randomLatLng.lat()" 
                         :lng="randomLatLng.lng()" 
+                        @moved="updateCurrentLocation"
                     />
                 </div>
 
@@ -316,29 +317,10 @@ export default {
             );
         }
         await this.$gmapApiPromiseLazy();
-        // this.panorama = new google.maps.StreetViewPanorama(
-        //     this.$refs.streetView
-        // );
-
-        // if (!this.streetViewService) {
-        //     this.streetViewService = new StreetViewService(
-        //         { allPanorama: this.allPanorama, optimiseStreetView: this.optimiseStreetView },
-        //         { mode: this.mode, areaParams: this.areaParams, areasJson: this.areasJson },
-        //         this.placeGeoJson,
-        //         this.roundsPredefined
-        //     );
-        // }
 
         if (!this.multiplayer) {
-            // await this.loadStreetView();
-            // this.$refs.mapContainer.startNextRound();
-            
-            if (this.timeLimitation != 0) {
-                if (!this.hasTimerStarted) {
-                    this.initTimer(this.timeLimitation);
-                    this.hasTimerStarted = true;
-                }
-            }
+            // Initial Mapillary loading logic will be handled here in future tracks
+            // For now we set isReady to true to allow MapillaryView to render if randomLatLng is set
             this.isReady = true;
         } else {
             // Set a room name if it's null to detect when the user refresh the page
@@ -499,6 +481,9 @@ export default {
     },
     methods: {
         ...mapActions(['loadAreas']),
+        updateCurrentLocation(coords) {
+            this.randomLatLng = new google.maps.LatLng(coords.lat, coords.lng);
+        },
         async loadStreetView() {
             let {panorama, roundInfo, warning, area} = await this.streetViewService.getStreetView(this.round);
             this.randomLatLng = panorama.location.latLng;

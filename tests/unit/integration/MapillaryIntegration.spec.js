@@ -100,9 +100,58 @@ describe('StreetView.vue Integration', () => {
         });
 
         await wrapper.vm.$nextTick(); // Wait for DOM update
-        console.log(wrapper.html());
 
         // Since we haven't updated StreetView.vue yet, this test is expected to fail finding MapillaryView
         expect(wrapper.findComponent(MapillaryView).exists()).toBe(true);
+    });
+
+    it('updates randomLatLng when MapillaryView emits moved', async () => {
+        const wrapper = shallowMount(StreetView, {
+            localVue,
+            store,
+            stubs: {
+                HeaderGame: {
+                    render: h => h('div'),
+                    methods: {
+                        startTimer: jest.fn(),
+                        stopTimer: jest.fn()
+                    }
+                },
+                Maps: true,
+                DialogMessage: true,
+                Leaderboard: true,
+                'v-overlay': true,
+                'v-progress-circular': true,
+                'v-tooltip': true,
+                'v-icon': true,
+                'v-btn': true,
+                'v-alert': true,
+                'v-progress-linear': true
+            },
+            mocks: {
+                $t: (msg) => msg,
+                $tc: (msg) => msg,
+                $vuetify: { breakpoint: { mobile: false } },
+                $gmapApiPromiseLazy: jest.fn().mockResolvedValue({})
+            }
+        });
+
+        wrapper.setData({
+            randomLatLng: { lat: () => 51.505, lng: () => -0.09 }
+        });
+        await wrapper.vm.$nextTick();
+
+        const mapillaryView = wrapper.findComponent(MapillaryView);
+        mapillaryView.vm.$emit('moved', { lat: 51.6, lng: -0.2 });
+
+        await wrapper.vm.$nextTick();
+        
+        // In the updated code, we should have a listener that updates randomLatLng or some other state
+        // For now let's just assert that we WANT it to be updated or handled.
+        // Assuming we add @moved="updateCurrentLocation" to MapillaryView in StreetView.vue
+        // and updateCurrentLocation(coords) { this.randomLatLng = new google.maps.LatLng(coords.lat, coords.lng); }
+        
+        expect(wrapper.vm.randomLatLng.lat()).toBe(51.6);
+        expect(wrapper.vm.randomLatLng.lng()).toBe(-0.2);
     });
 });
