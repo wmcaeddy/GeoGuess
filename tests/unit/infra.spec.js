@@ -14,4 +14,16 @@ describe('Infrastructure Configuration', () => {
         const content = fs.readFileSync(entrypointPath, 'utf8');
         expect(content).toContain("sed -i 's|VUE_APP_MAPILLARY_CLIENT_ID_ENV|'${VUE_APP_MAPILLARY_CLIENT_ID:-none}|g' $file");
     });
+
+    it('railway.toml should exist and contain build command', () => {
+        const railwayPath = path.resolve(__dirname, '../../railway.toml');
+        const content = fs.readFileSync(railwayPath, 'utf8');
+        expect(content).toContain('[build]');
+    });
+
+    it('.env.dist should contain VUE_APP_MAPILLARY_CLIENT_ID', () => {
+        const envDistPath = path.resolve(__dirname, '../../.env.dist');
+        const content = fs.readFileSync(envDistPath, 'utf8');
+        expect(content).toContain('VUE_APP_MAPILLARY_CLIENT_ID=');
+    });
 });
