@@ -1,0 +1,4 @@
+Task: Verify Game Flow
+Summary: Implemented the 'updateCurrentLocation' method in 'StreetView.vue' to handle the 'moved' event from 'MapillaryView', ensuring 'randomLatLng' is kept in sync with the player's movement. Cleaned up 'StreetView.vue' by removing obsolete Google Maps initialization logic. Verified the integration with updated unit tests.
+Files: src/pages/StreetView.vue, tests/unit/integration/MapillaryIntegration.spec.js
+Why: To ensure the game logic correctly responds to user navigation in the new Mapillary-based environment.
