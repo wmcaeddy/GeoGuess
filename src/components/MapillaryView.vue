@@ -29,8 +29,14 @@ export default {
     initMapillary() {
       if (this.mly) return;
 
+      const accessToken = process.env.VUE_APP_MAPILLARY_CLIENT_ID;
+      if (!accessToken || accessToken === 'none' || accessToken === 'VUE_APP_MAPILLARY_CLIENT_ID_ENV') {
+        console.warn('Mapillary access token is missing or invalid. MapillaryView will not be initialized.');
+        return;
+      }
+
       this.mly = new Viewer({
-        accessToken: process.env.VUE_APP_MAPILLARY_CLIENT_ID,
+        accessToken: accessToken,
         container: 'mly',
         component: { cover: false },
       });

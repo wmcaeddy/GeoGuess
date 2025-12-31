@@ -308,20 +308,25 @@ export default {
       }
     },
     async mounted() {
+        console.log('StreetView.vue mounted');
         if (
             (this.areaParams && this.areaParams.data.urlArea) ||
             this.mode === GAME_MODE.COUNTRY
         ) {
+            console.log('Loading areas...');
             await this.loadAreas(
                 this.areaParams && this.areaParams.data.urlArea
             );
         }
+        console.log('Waiting for Google Maps API...');
         await this.$gmapApiPromiseLazy();
+        console.log('Google Maps API loaded');
 
         if (!this.multiplayer) {
             // Initial Mapillary loading logic will be handled here in future tracks
             // For now we set isReady to true to allow MapillaryView to render if randomLatLng is set
             this.isReady = true;
+            console.log('Game is ready (single player)');
         } else {
             // Set a room name if it's null to detect when the user refresh the page
             if (!this.roomName) {
