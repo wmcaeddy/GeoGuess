@@ -15,6 +15,17 @@ describe('Infrastructure Configuration', () => {
         expect(content).toContain("sed -i 's|VUE_APP_MAPILLARY_CLIENT_ID_ENV|'${VUE_APP_MAPILLARY_CLIENT_ID:-none}|g' $file");
     });
 
+    it('entrypoint.sh should contain port replacement logic for nginx config', () => {
+        const content = fs.readFileSync(entrypointPath, 'utf8');
+        expect(content).toContain("sed -i 's|PORT_HOLDER|'${PORT:-80}'|g' /etc/nginx/conf.d/default.conf");
+    });
+
+    it('nginx.conf should use PORT_HOLDER placeholder', () => {
+        const nginxPath = path.resolve(__dirname, '../../nginx.conf');
+        const content = fs.readFileSync(nginxPath, 'utf8');
+        expect(content).toContain('listen PORT_HOLDER;');
+    });
+
     it('railway.toml should exist and contain build command', () => {
         const railwayPath = path.resolve(__dirname, '../../railway.toml');
         const content = fs.readFileSync(railwayPath, 'utf8');
