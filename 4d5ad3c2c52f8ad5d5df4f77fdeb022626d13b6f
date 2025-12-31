@@ -1,0 +1,4 @@
+Task: Integrate Component into Game Page
+Summary: Replaced the Google Maps StreetView integration in 'StreetView.vue' with the new 'MapillaryView' component. Removed initialization logic for Google Maps StreetView Service and verified the replacement with an integration test.
+Files: src/pages/StreetView.vue, tests/unit/integration/MapillaryIntegration.spec.js
+Why: To fully migrate the main game view from Google Maps to Mapillary.
