@@ -1,0 +1,4 @@
+Task: Add Runtime Safety Checks
+Summary: Added validation for the Mapillary access token in 'MapillaryView.vue' to prevent initialization if the token is missing or invalid. Added console logging to the 'mounted' hook of 'StreetView.vue' to track the loading process of mapping APIs and areas.
+Files: src/components/MapillaryView.vue, src/pages/StreetView.vue
+Why: To prevent runtime crashes and provide better visibility into the application's startup lifecycle, making it easier to diagnose blank page issues.
