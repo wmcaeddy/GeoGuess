@@ -1,6 +1,6 @@
 # Plan: Debug and Fix Railway Deployment
 
-## Phase 1: Deep Inspection & Fix
+## Phase 1: Deep Inspection & Fix [checkpoint: ced9cf9]
 - [x] Task: Verbose Entrypoint Logging 6e2b9cf
     - [ ] Subtask: Update `entrypoint.sh` to `cat /etc/nginx/conf.d/default.conf` before starting nginx.
     - [ ] Subtask: Print the value of `PORT` explicitly.
