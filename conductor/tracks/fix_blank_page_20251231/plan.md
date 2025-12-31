@@ -1,6 +1,6 @@
 # Plan: Fix Blank Page and Asset Paths
 
-## Phase 1: Asset Path & API Key Fixes
+## Phase 1: Asset Path & API Key Fixes [checkpoint: 3148601]
 - [x] Task: Update Public Path Logic ba7dc39
     - [ ] Subtask: Modify `entrypoint.sh` to use an empty string default for `VUE_APP_PUBLIC_PATH`.
 - [x] Task: Add Runtime Safety Checks 678c48f
