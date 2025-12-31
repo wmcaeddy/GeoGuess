@@ -3,6 +3,7 @@ import 'firebase/analytics';
 import firebase from 'firebase/app';
 import 'firebase/database';
 import * as GmapVue from 'gmap-vue';
+import 'mapillary-js/dist/mapillary.css';
 import Vue from 'vue';
 import VueAxios from 'vue-axios';
 import VueClipboard from 'vue-clipboard2';

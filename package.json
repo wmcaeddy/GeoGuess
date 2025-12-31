@@ -23,6 +23,7 @@
     "core-js": "^3.8.3",
     "firebase": "8.10.1",
     "gmap-vue": "^1.5.0",
+    "mapillary-js": "^4.1.2",
     "random-position-in-polygon": "^1.0.6",
     "register-service-worker": "^1.7.2",
     "vue": "^2.7.0",
