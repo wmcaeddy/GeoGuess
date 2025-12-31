@@ -1,0 +1,4 @@
+Task: Handle Navigation Events
+Summary: Implemented an event listener for Mapillary's 'image' event to capture location changes. The component now emits a custom 'moved' event with the new lat/lng coordinates. Added unit tests to verify event emission.
+Files: src/components/MapillaryView.vue, tests/unit/components/MapillaryView.spec.js
+Why: To allow the parent game component to track the player's movement within the Mapillary street-level imagery.
