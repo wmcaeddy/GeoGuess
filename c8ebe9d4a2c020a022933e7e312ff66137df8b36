@@ -1,0 +1,4 @@
+Task: Install Mapillary JS
+Summary: Installed the mapillary-js dependency and imported its CSS file in src/main.js. Verified the installation and import with unit tests.
+Files: package.json, package-lock.json, src/main.js, tests/unit/mapillary_install.spec.js
+Why: To enable the use of the Mapillary viewer component in the application.
