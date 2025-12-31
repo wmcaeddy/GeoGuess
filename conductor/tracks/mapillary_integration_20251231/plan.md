@@ -18,7 +18,7 @@
     - [ ] Subtask: Implement the `mounted` hook to initialize `Mapillary.Viewer`.
     - [ ] Subtask: Add props for `lat` and `lng`.
     - [ ] Subtask: Write a basic unit test to verify the component mounts.
-- [ ] Task: Integrate Component into Game Page
+- [x] Task: Integrate Component into Game Page 4d5ad3c
     - [ ] Subtask: Replace `StreetView` component usage in `src/pages/StreetView.vue` (or equivalent) with `MapillaryView`.
     - [ ] Subtask: Pass test coordinates to verify the viewer loads an image.
 - [ ] Task: Conductor - User Manual Verification 'Mapillary Component Implementation' (Protocol in workflow.md)
