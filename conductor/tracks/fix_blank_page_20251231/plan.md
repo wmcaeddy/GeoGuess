@@ -6,6 +6,6 @@
 - [x] Task: Add Runtime Safety Checks 678c48f
     - [ ] Subtask: Update `MapillaryView.vue` to only initialize if a valid `accessToken` is provided.
     - [ ] Subtask: Add console logging to `StreetView.vue` to track lifecycle events.
-- [ ] Task: Update Unit Tests
+- [x] Task: Update Unit Tests ba7dc39
     - [ ] Subtask: Update `tests/unit/infra.spec.js` to verify new path logic.
 - [ ] Task: Conductor - User Manual Verification 'Asset Path & API Key Fixes' (Protocol in workflow.md)
