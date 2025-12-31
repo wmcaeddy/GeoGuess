@@ -1,4 +1,4 @@
-FROM node:lts-alpine as builder
+FROM node:lts-alpine AS builder
 
 WORKDIR /app
 COPY package*.json ./
@@ -21,7 +21,7 @@ ENV VUE_APP_MAPILLARY_CLIENT_ID=VUE_APP_MAPILLARY_CLIENT_ID_ENV
 
 RUN npm run build
 
-FROM nginx:stable-alpine as production
+FROM nginx:stable-alpine AS production
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
