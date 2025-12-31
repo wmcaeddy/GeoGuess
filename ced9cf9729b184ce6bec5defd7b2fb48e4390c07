@@ -1,0 +1,8 @@
+Phase: Deep Inspection & Fix
+Verification Report:
+- Automated Tests: N/A (Manual Railway testing preferred by user)
+- Manual Verification:
+  1. Dockerfile keyword casing fixed (AS vs as).
+  2. railway.toml simplified to remove potentially conflicting startCommand.
+  3. entrypoint.sh includes verbose cat of nginx config for Railway log inspection.
+User Confirmation: Yes
