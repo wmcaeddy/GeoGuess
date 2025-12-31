@@ -1,0 +1,8 @@
+Phase: Asset Path & API Key Fixes
+Verification Report:
+- Automated Tests: Passed (infra, MapillaryView component, integration tests)
+- Manual Verification:
+  1. entrypoint.sh handles empty VUE_APP_PUBLIC_PATH correctly.
+  2. MapillaryView has safety check for accessToken.
+  3. StreetView.vue has lifecycle logging.
+User Confirmation: Yes
