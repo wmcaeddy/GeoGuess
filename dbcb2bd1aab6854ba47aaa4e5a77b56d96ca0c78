@@ -1,0 +1,4 @@
+Task: Fix Nginx Config Replacement
+Summary: Hardened the 'entrypoint.sh' script by adding a file existence check before attempting 'sed' replacements. Improved 'sed' command robustness with proper quoting and added fallback values for environment variables.
+Files: entrypoint.sh, tests/unit/infra.spec.js
+Why: To prevent the startup script from failing if certain files are missing or environment variables are empty, ensuring a smoother container initialization.
