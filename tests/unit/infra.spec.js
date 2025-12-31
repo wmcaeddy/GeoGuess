@@ -30,6 +30,11 @@ describe('Infrastructure Configuration', () => {
         expect(content).toContain('echo "Skipping $file (not found)"');
     });
 
+    it('entrypoint.sh should contain public path replacement logic', () => {
+        const content = fs.readFileSync(entrypointPath, 'utf8');
+        expect(content).toContain('sed -i "s|VUE_APP_PUBLIC_PATH_ENV|${VUE_APP_PUBLIC_PATH:-}|g" "$file"');
+    });
+
     it('entrypoint.sh should contain VUE_APP_MAPILLARY_CLIENT_ID replacement logic', () => {
         const content = fs.readFileSync(entrypointPath, 'utf8');
         expect(content).toContain('sed -i "s|VUE_APP_MAPILLARY_CLIENT_ID_ENV|${VUE_APP_MAPILLARY_CLIENT_ID:-none}|g" "$file"');

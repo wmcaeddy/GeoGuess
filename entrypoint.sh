@@ -15,7 +15,7 @@ do
     echo "Processing $file ...";
 
     # Replacing ENV variables if specified
-    sed -i "s|VUE_APP_PUBLIC_PATH_ENV|${VUE_APP_PUBLIC_PATH:-/}|g" "$file"
+    sed -i "s|VUE_APP_PUBLIC_PATH_ENV|${VUE_APP_PUBLIC_PATH:-}|g" "$file"
     sed -i "s|VUE_APP_API_KEY_ENV|${VUE_APP_API_KEY:-none1}|g" "$file"
     sed -i "s|VUE_APP_FIREBASE_API_KEY_ENV|${VUE_APP_FIREBASE_API_KEY:-none2}|g" "$file"
     sed -i "s|VUE_APP_FIREBASE_AUTH_DOMAIN_ENV|${VUE_APP_FIREBASE_AUTH_DOMAIN:-none3}|g" "$file"
