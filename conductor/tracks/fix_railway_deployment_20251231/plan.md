@@ -1,6 +1,6 @@
 # Plan: Fix Railway Deployment Healthcheck
 
-## Phase 1: Configuration & Entrypoint Fixes
+## Phase 1: Configuration & Entrypoint Fixes [checkpoint: f317d92]
 - [x] Task: Update Nginx Config 4ff2d9c
     - [ ] Subtask: Add `listen [::]:PORT_HOLDER;` for IPv6 support.
     - [ ] Subtask: Ensure `PORT_HOLDER` is used correctly.
@@ -11,4 +11,4 @@
 - [x] Task: Update Unit Tests 64fb59e
     - [ ] Subtask: Update `tests/unit/infra.spec.js` to match new config.
     - [ ] Subtask: Verify port replacement logic with tests.
-- [ ] Task: Conductor - User Manual Verification 'Configuration & Entrypoint Fixes' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Configuration & Entrypoint Fixes' (Protocol in workflow.md)
