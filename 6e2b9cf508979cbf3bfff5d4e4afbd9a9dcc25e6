@@ -1,0 +1,4 @@
+Task: Verbose Entrypoint Logging
+Summary: Added 'cat /etc/nginx/conf.d/default.conf' to 'entrypoint.sh' to print the final Nginx configuration to stdout before the server starts.
+Files: entrypoint.sh, tests/unit/infra.spec.js
+Why: To provide visibility into whether the port replacement logic correctly updates the Nginx configuration in the Railway environment.
