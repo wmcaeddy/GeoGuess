@@ -10,7 +10,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Railway Configuration' (Protocol in workflow.md)
 
 ## Phase 2: Mapillary Component Implementation
-- [ ] Task: Install Mapillary JS
+- [x] Task: Install Mapillary JS c8ebe9d
     - [ ] Subtask: Run `npm install mapillary-js`.
     - [ ] Subtask: Add the Mapillary CSS to the project (e.g., in `main.js` or `App.vue`).
 - [ ] Task: Create Mapillary Wrapper Component
